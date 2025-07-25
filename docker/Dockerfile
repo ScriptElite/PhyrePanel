@@ -47,12 +47,12 @@ RUN apt-get update && \
 WORKDIR /phyre/install
 
 # 3.2 - Install Phyre PHP
-RUN wget -q https://github.com/PhyreApps/PhyrePanelPHP/raw/main/compilators/debian/php/dist/phyre-php-8.2.0-ubuntu-22.04.deb && \
+RUN wget -q https://github.com/ScriptElite/PhyrePanelPHP/raw/main/compilators/debian/php/dist/phyre-php-8.2.0-ubuntu-22.04.deb && \
     dpkg -i phyre-php-8.2.0-ubuntu-22.04.deb || (apt-get install -f -y && dpkg -i phyre-php-8.2.0-ubuntu-22.04.deb) && \
     rm -f phyre-php-8.2.0-ubuntu-22.04.deb
 
 # 3.3 - Install Phyre NGINX
-RUN wget -q https://github.com/PhyreApps/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-ubuntu-22.04.deb && \
+RUN wget -q https://github.com/ScriptElite/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-ubuntu-22.04.deb && \
     dpkg -i phyre-nginx-1.24.0-ubuntu-22.04.deb || (apt-get install -f -y && dpkg -i phyre-nginx-1.24.0-ubuntu-22.04.deb) && \
     rm -f phyre-nginx-1.24.0-ubuntu-22.04.deb && \
     ln -s /usr/local/phyre/nginx/sbin/phyre-nginx /usr/local/phyre/nginx/sbin/nginx
@@ -63,15 +63,15 @@ RUN wget -q https://github.com/PhyreApps/PhyrePanelNGINX/raw/main/compilators/de
 RUN ln -s /usr/local/phyre/php/bin/php /usr/bin/phyre-php
 
 RUN mkdir -p /usr/local/phyre/ssl && \
-    wget -q https://raw.githubusercontent.com/PhyreApps/PhyrePanel/refs/heads/main/web/server/ssl/phyre.crt -O /usr/local/phyre/ssl/phyre.crt && \
-    wget -q https://raw.githubusercontent.com/PhyreApps/PhyrePanel/refs/heads/main/web/server/ssl/phyre.key -O /usr/local/phyre/ssl/phyre.key && \
+    wget -q https://raw.githubusercontent.com/ScriptElite/PhyrePanel/refs/heads/main/web/server/ssl/phyre.crt -O /usr/local/phyre/ssl/phyre.crt && \
+    wget -q https://raw.githubusercontent.com/ScriptElite/PhyrePanel/refs/heads/main/web/server/ssl/phyre.key -O /usr/local/phyre/ssl/phyre.key && \
     chmod 644 /usr/local/phyre/ssl/phyre.crt && \
     chmod 600 /usr/local/phyre/ssl/phyre.key
 
 # --------------------------------------------------
 # 5) Download Phyre Web Panel
 # --------------------------------------------------
-RUN wget -q https://github.com/PhyreApps/PhyrePanelWebCompiledVersions/raw/main/phyre-web-panel.zip && \
+RUN wget -q https://github.com/ScriptElite/PhyrePanelWebCompiledVersions/raw/main/phyre-web-panel.zip && \
     unzip -qq -o phyre-web-panel.zip -d /usr/local/phyre/web && \
     rm -rf phyre-web-panel.zip
 
