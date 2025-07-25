@@ -46,20 +46,20 @@ service mysql start
 
 mkdir -p /usr/local/phyre/ssl
 
-wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/refs/heads/main/web/server/ssl/phyre.crt -O /usr/local/phyre/ssl/phyre.crt
-wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/refs/heads/main/web/server/ssl/phyre.key -O /usr/local/phyre/ssl/phyre.key
+wget https://raw.githubusercontent.com/ScriptElite/PhyrePanel/refs/heads/main/web/server/ssl/phyre.crt -O /usr/local/phyre/ssl/phyre.crt
+wget https://raw.githubusercontent.com/ScriptElite/PhyrePanel/refs/heads/main/web/server/ssl/phyre.key -O /usr/local/phyre/ssl/phyre.key
 
 sudo chmod 644 /usr/local/phyre/ssl/phyre.crt
 sudo chmod 600 /usr/local/phyre/ssl/phyre.key
 
-wget https://raw.githubusercontent.com/PhyreApps/PhyrePanel/main/installers/ubuntu-24.04/greeting.sh -O /etc/profile.d/phyre-greeting.sh
+wget https://raw.githubusercontent.com/ScriptElite/PhyrePanel/main/installers/ubuntu-24.04/greeting.sh -O /etc/profile.d/phyre-greeting.sh
 
 # Install PHYRE PHP
-wget https://github.com/PhyreApps/PhyrePanelPHP/raw/main/compilators/debian/php/dist/phyre-php-8.2.0-ubuntu-24.04.deb
+wget https://github.com/ScriptElite/PhyrePanelPHP/raw/main/compilators/debian/php/dist/phyre-php-8.2.0-ubuntu-24.04.deb
 dpkg -i phyre-php-8.2.0-ubuntu-24.04.deb
 
 # Install PHYRE NGINX
-wget https://github.com/PhyreApps/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-ubuntu-24.04.deb
+wget https://github.com/ScriptElite/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-ubuntu-24.04.deb
 dpkg -i phyre-nginx-1.24.0-ubuntu-24.04.deb
 
 PHYRE_PHP=/usr/local/phyre/php/bin/php
@@ -83,7 +83,7 @@ LOG_JSON='{"os": "'$DISTRO_NAME-$DISTRO_VERSION'", "host_name": "'$HOSTNAME'", "
 curl -s https://phyrepanel.com/api/phyre-installation-log -X POST -H "Content-Type: application/json" -d "$LOG_JSON"
 #!/bin/bash
 
-wget https://github.com/PhyreApps/PhyrePanelWebCompiledVersions/raw/main/phyre-web-panel.zip
+wget https://github.com/ScriptElite/PhyrePanelWebCompiledVersions/raw/main/phyre-web-panel.zip
 unzip -qq -o phyre-web-panel.zip -d /usr/local/phyre/web
 rm -rf phyre-web-panel.zip
 
