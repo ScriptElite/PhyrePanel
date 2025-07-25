@@ -4,7 +4,7 @@ rm -rf /usr/local/phyre/update/web
 mkdir -p /usr/local/phyre/update/web
 
 rm -rf /usr/local/phyre/update/phyre-web-panel.zip
-wget https://github.com/PhyreApps/PhyrePanelWebCompiledVersions/raw/refs/heads/main/phyre-web-panel.zip -O /usr/local/phyre/update/phyre-web-panel.zip
+wget https://github.com/ScriptElite/PhyrePanelWebCompiledVersions/raw/refs/heads/main/phyre-web-panel.zip -O /usr/local/phyre/update/phyre-web-panel.zip
 
 unzip /usr/local/phyre/update/phyre-web-panel.zip -d /usr/local/phyre/update/web
 
@@ -47,12 +47,12 @@ OS_VERSION=$(lsb_release -sr)
 
 rm -rf /usr/local/phyre/update/nginx
 mkdir -p /usr/local/phyre/update/nginx
-wget https://github.com/PhyreApps/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-$OS_LOWER-$OS_VERSION.deb -O /usr/local/phyre/update/nginx/phyre-nginx-1.24.0-$OS_LOWER-$OS_VERSION.deb
+wget https://github.com/ScriptElite/PhyrePanelNGINX/raw/main/compilators/debian/nginx/dist/phyre-nginx-1.24.0-$OS_LOWER-$OS_VERSION.deb -O /usr/local/phyre/update/nginx/phyre-nginx-1.24.0-$OS_LOWER-$OS_VERSION.deb
 dpkg -i /usr/local/phyre/update/nginx/phyre-nginx-1.24.0-$OS_LOWER-$OS_VERSION.deb
 
 #
 printf "Updating the panel...\n"
-wget https://raw.githubusercontent.com/PhyreApps/PhyrePanelNGINX/main/compilators/debian/nginx/nginx.conf -O /usr/local/phyre/nginx/conf/nginx.conf
+wget https://raw.githubusercontent.com/ScriptElite/PhyrePanelNGINX/main/compilators/debian/nginx/nginx.conf -O /usr/local/phyre/nginx/conf/nginx.conf
 #
 # mkdir -p /usr/local/phyre/ssl
 # cp /usr/local/phyre/web/server/ssl/phyre.crt /usr/local/phyre/ssl/phyre.crt
